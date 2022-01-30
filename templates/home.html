@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="row">
+    {% for row in animals|batch(2) %}
+    <div class="column">
+        {% for animal in row %}
+        <div class="card">
+            <img src="../static/{{ "cat1.jpg" }}" alt="Avatar" style="max-height: 500px">
+            <div class="container">
+                <h4><b>{{ animal }}</b></h4>
+                <p>{{ "Last Sighted: " }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock %}
